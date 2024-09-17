@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; 
+    padding: 0;
+    position: relative; 
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./back.jpg');
+    background-size: cover; 
+    background-position: center;
+    opacity: 0.5;
+    z-index: -1; 
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.9); 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+textarea,
+input[type="number"],
+input[type="file"] {
+    width: 100%; 
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+}
+
+input[type="number"],
+input[type="file"] {
+    width: calc(50% - 2px); 
+    margin-right: 2%; 
+}
+
+input[type="file"] {
+    margin-right: 0; 
+}
+
+.action-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 5px; 
+}
+
+.action-button:hover {
+    background-color: #45a049; 
+}
+
+.radio-group {
+    margin-bottom: 20px;
+}
+
+.tab {
+    display: none;
+}
+
+.tab.active {
+    display: block;
+}
