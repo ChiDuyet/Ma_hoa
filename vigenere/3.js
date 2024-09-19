@@ -19,6 +19,18 @@ function loadFile(event, targetId) {
     }
 }
 
+function displayKey() {
+    const key = document.getElementById('keyEncrypt').value.split(' ').map(Number);
+    const output = key.map((value, index) => `k${index + 1} = ${value}`).join('\n');
+    document.getElementById('keyOutput').value = output;
+}
+
+function displayKeyDecrypt() {
+    const key = document.getElementById('keyDecrypt').value.split(' ').map(Number);
+    const output = key.map((value, index) => `k${index + 1} = ${value}`).join('\n');
+    document.getElementById('keyOutputDecrypt').value = output;
+}
+
 function encrypt() {
     const text = document.getElementById('inputTextEncrypt').value;
     const key = document.getElementById('keyEncrypt').value.split(' ').map(Number);

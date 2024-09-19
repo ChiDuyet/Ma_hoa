@@ -18,7 +18,8 @@
             <h3>Mã Hóa</h3>
             <textarea id="inputTextEncrypt" placeholder="Nhập văn bản cần mã hóa"></textarea>
             <input type="file" id="fileInputEncrypt" accept=".txt" onchange="loadFile(event, 'inputTextEncrypt')">
-            <input type="text" id="keyEncrypt" placeholder="Nhập khóa (chỉ số nguyên)">
+            <input type="text" id="keyEncrypt" placeholder="Nhập khóa (chỉ số nguyên)" oninput="displayKey()">
+            <textarea id="keyOutput" placeholder="Các giá trị khóa sẽ xuất hiện ở đây" readonly></textarea>
             <button class="action-button" onclick="encrypt()">Mã Hóa</button>
             <textarea id="resultEncrypt" placeholder="Kết quả mã hóa" readonly></textarea>
             <h4>Giải Mã Kết Quả Mã Hóa</h4>
@@ -31,7 +32,8 @@
             <h3>Giải Mã</h3>
             <textarea id="inputTextDecrypt" placeholder="Nhập văn bản cần giải mã"></textarea>
             <input type="file" id="fileInputDecrypt" accept=".txt" onchange="loadFile(event, 'inputTextDecrypt')">
-            <input type="text" id="keyDecrypt" placeholder="Nhập khóa (chỉ số nguyên)">
+            <input type="text" id="keyDecrypt" placeholder="Nhập khóa (chỉ số nguyên)" oninput="displayKeyDecrypt()">
+            <textarea id="keyOutputDecrypt" placeholder="Các giá trị khóa sẽ xuất hiện ở đây" readonly></textarea>
             <button class="action-button" onclick="decrypt()">Giải Mã</button>
             <textarea id="resultDecrypt" placeholder="Kết quả giải mã" readonly></textarea>
             <h4>Mã Hóa Lại Kết Quả Giải Mã</h4>
