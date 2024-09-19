@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mã Hóa Vigenere</title>
+    <link rel="stylesheet" href="2.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Mã Hóa Vigenere</h2>
+        <div class="radio-group">
+            <label><input type="radio" name="mode" value="encrypt" checked onclick="showTab('encrypt')"> Mã Hóa</label>
+            <label><input type="radio" name="mode" value="decrypt" onclick="showTab('decrypt')"> Giải Mã</label>
+        </div>
+
+        <div id="encrypt" class="tab active">
+            <h3>Mã Hóa</h3>
+            <textarea id="inputTextEncrypt" placeholder="Nhập văn bản cần mã hóa"></textarea>
+            <input type="file" id="fileInputEncrypt" accept=".txt" onchange="loadFile(event, 'inputTextEncrypt')">
+            <input type="text" id="keyEncrypt" placeholder="Nhập khóa (chỉ số nguyên)">
+            <button class="action-button" onclick="encrypt()">Mã Hóa</button>
+            <textarea id="resultEncrypt" placeholder="Kết quả mã hóa" readonly></textarea>
+            <h4>Giải Mã Kết Quả Mã Hóa</h4>
+            <button class="action-button" onclick="decryptFromResult()">Giải Mã Kết Quả Trên</button>
+            <textarea id="resultDecryptFromEncrypt" placeholder="Kết quả giải mã" readonly></textarea>
+            <button class="action-button" onclick="download('result_encrypt.txt', document.getElementById('resultEncrypt').value)">Lưu Kết Quả Mã Hóa</button>
+        </div>
+
+        <div id="decrypt" class="tab">
+            <h3>Giải Mã</h3>
+            <textarea id="inputTextDecrypt" placeholder="Nhập văn bản cần giải mã"></textarea>
+            <input type="file" id="fileInputDecrypt" accept=".txt" onchange="loadFile(event, 'inputTextDecrypt')">
+            <input type="text" id="keyDecrypt" placeholder="Nhập khóa (chỉ số nguyên)">
+            <button class="action-button" onclick="decrypt()">Giải Mã</button>
+            <textarea id="resultDecrypt" placeholder="Kết quả giải mã" readonly></textarea>
+            <h4>Mã Hóa Lại Kết Quả Giải Mã</h4>
+            <button class="action-button" onclick="encryptFromDecryptResult()">Mã Hóa Lại Kết Quả Trên</button>
+            <textarea id="resultEncryptFromDecrypt" placeholder="Kết quả mã hóa lại" readonly></textarea>
+            <button class="action-button" onclick="download('result_decrypt.txt', document.getElementById('resultDecrypt').value)">Lưu Kết Quả Giải Mã</button>
+        </div>
+    </div>
+
+    <script src="3.js"></script>
+</body>
+</html>
